@@ -71,4 +71,4 @@ Entrypoint of a project is ***[e2e.sh]*** script which aggregates all the others
 
 [FAST]: <https://docs.fast.wallarm.com/>
 [Google Gruyere]: <https://google-gruyere.appspot.com>
-[e2e.sh]: <https://gl.wallarm.com/apetriv/shell_ci_cd/blob/master/e2e.sh>
+[e2e.sh]: <https://github.com/AndreyPetriv-Wallarm/FAST-ci-cd-shell/blob/master/e2e.sh>
