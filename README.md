@@ -12,7 +12,7 @@ Properly configured Gitlab Runner:
 docker network create fast
 ```
 * Configured volumes in config.toml
-* Set up variables WALARM_UUID and WALARM_SECRET in CI/CD settings (Not Protected)
+* Set up variables WALARM_UUID, WALARM_SECRET and WALLARM_API_TOKEN in CI/CD settings (Not Protected)
 
 *Note: you should properly configure the following parameters in create_test_run.sh*
 
