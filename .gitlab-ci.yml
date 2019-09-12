@@ -1,0 +1,18 @@
+image: docker:dind
+
+# Note: no used currently since fast is coming up from start_fast.sh
+#services:
+#    - name: wallarm/fast:latest
+#      alias: fast
+
+test:
+  before_script:
+    - apk update
+    - apk add curl
+
+  script:
+    - cd $CI_PROJECT_DIR
+    - ./e2e.sh
+  
+  after_script:    
+    - ./stop_fast.sh

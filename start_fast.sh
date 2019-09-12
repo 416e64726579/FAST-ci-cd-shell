@@ -1,0 +1,1 @@
+docker run -d --rm --name fast --env-file=env.conf --network="fast" wallarm/fast
