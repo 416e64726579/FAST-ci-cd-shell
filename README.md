@@ -16,6 +16,8 @@ docker network create fast
 
 *Note: you should properly configure the following parameters in create_test_run.sh*
 
+**New remark: it's possible to set *X-WallarmAPI-Token* header for scripts requesting API instead of UUID/Secret**
+
 ```json	
     "name": <name> 
     "desc": <description>

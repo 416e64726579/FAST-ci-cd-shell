@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "9a718ede-9d0a-4554-8c4d-b95a9f1edfc9",
+		"name": "Test-Run",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://us1.api.wallarm.com/v1/test_run",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d09843d-4a2d-4f07-8e1e-abf850069c2a",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"id\", jsonData.body.id);",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"test_record_id\", jsonData.body.test_record_id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Host",
+						"value": "us1.api.wallarm.com"
+					},
+					{
+						"key": "X-WallarmAPI-Token",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"paused\",\n    \"name\": \"gitlab-ci\",\n    \"desc\": \"GITLAB CI/CD\",\n    \"rps\": 20,\n    \"rps_per_baseline\": 2,\n    \"tags\": [],\n    \"policy_id\": 68,\n    \"node_id\": 10716,\n    \"skip_duplicated_baselines\": true,\n    \"stop_on_first_fail\": false,\n    \"inactivity_timeout\": 1800,\n    \"type\": \"node\",\n    \"clientid\": 172\n}"
+				},
+				"url": {
+					"raw": "https://us1.api.wallarm.com/v1/test_run",
+					"protocol": "https",
+					"host": [
+						"us1",
+						"api",
+						"wallarm",
+						"com"
+					],
+					"path": [
+						"v1",
+						"test_run"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://us1.api.wallarm.com/v1/test_run/{{id}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f43a0130-a0b3-489e-bd5b-2d685c2e0de1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "us1.api.wallarm.com"
+					},
+					{
+						"key": "X-WallarmAPI-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "https://us1.api.wallarm.com/v1/test_run/{{id}}",
+					"protocol": "https",
+					"host": [
+						"us1",
+						"api",
+						"wallarm",
+						"com"
+					],
+					"path": [
+						"v1",
+						"test_run",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://us1.api.wallarm.com/v1/test_run/{{id}}/action/pause",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "48768f04-4436-440d-aff0-8363062fb859",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "us1.api.wallarm.com",
+						"type": "text"
+					},
+					{
+						"key": "X-WallarmAPI-Token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us1.api.wallarm.com/v1/test_run/{{id}}/action/pause",
+					"protocol": "https",
+					"host": [
+						"us1",
+						"api",
+						"wallarm",
+						"com"
+					],
+					"path": [
+						"v1",
+						"test_run",
+						"{{id}}",
+						"action",
+						"pause"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://us1.api.wallarm.com/v1/test_run/{{id}}/action/run",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "us1.api.wallarm.com",
+						"type": "text"
+					},
+					{
+						"key": "X-WallarmAPI-Token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us1.api.wallarm.com/v1/test_run/{{id}}/action/run",
+					"protocol": "https",
+					"host": [
+						"us1",
+						"api",
+						"wallarm",
+						"com"
+					],
+					"path": [
+						"v1",
+						"test_run",
+						"{{id}}",
+						"action",
+						"run"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://us1.api.wallarm.com/v1/test_record/{{id}}/action/stop",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5703e7bc-e877-4f7b-bb3a-1e759a2e62c4",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "us1.api.wallarm.com",
+						"type": "text"
+					},
+					{
+						"key": "X-WallarmAPI-Token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us1.api.wallarm.com/v1/test_record/{{test_record_id}}/action/stop",
+					"protocol": "https",
+					"host": [
+						"us1",
+						"api",
+						"wallarm",
+						"com"
+					],
+					"path": [
+						"v1",
+						"test_record",
+						"{{test_record_id}}",
+						"action",
+						"stop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://us1.api.wallarm.com/v1/test_run/{{id}}/action/interrupt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "us1.api.wallarm.com",
+						"type": "text"
+					},
+					{
+						"key": "X-WallarmAPI-Token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us1.api.wallarm.com/v1/test_run/{{id}}/action/interrupt",
+					"protocol": "https",
+					"host": [
+						"us1",
+						"api",
+						"wallarm",
+						"com"
+					],
+					"path": [
+						"v1",
+						"test_run",
+						"{{id}}",
+						"action",
+						"interrupt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
