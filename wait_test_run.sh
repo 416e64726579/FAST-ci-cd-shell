@@ -1,6 +1,6 @@
 finished="false"
 while [ "${finished}" != "true" ] ; do
-	state=$(./get_test_run.sh $1 $2 $3| sed -e 's/[{}]/''/g' | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}'|grep "\"state\":" | awk -F ':' '{ print $2 }' | sed -e 's/"//g') 
+	state=$(./get_test_run.sh $1 $2| sed -e 's/[{}]/''/g' | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}'|grep "\"state\":" | awk -F ':' '{ print $2 }' | sed -e 's/"//g') 
 	if [ "$state" == "running" ] || [ "$state" == "running_scheduled" ] || [ "$state" == "paused" ] ; then 
 		echo ${state}
 		sleep 10
@@ -17,3 +17,4 @@ while [ "${finished}" != "true" ] ; do
 		fi
   	fi
 done
+

@@ -2,7 +2,7 @@
 
 <img src="https://docs.wallarm.com/images/wallarm_logo-en.svg?v=1" alt="drawing" width="130.320" height="63.424" />
 
-This is a project provided as PoC of gitlab ci/cd with Wallarm [FAST] solution.
+This is a simple project provided as PoC of gitlab ci/cd with Wallarm [FAST] solution.
 
 ## Prerequisites
 
@@ -12,11 +12,9 @@ Properly configured Gitlab Runner:
 docker network create fast
 ```
 * Configured volumes in config.toml
-* Set up variables WALLARM_UUID, WALLARM_SECRET and WALLARM_API_TOKEN in CI/CD settings (Not Protected)
+* Set up variable WALLARM_API_TOKEN in CI/CD settings (Not Protected)
 
 *Note: you should properly configure the following parameters in create_test_run.sh*
-
-**New remark: it's possible to set *X-WallarmAPI-Token* header for scripts requesting API instead of UUID/Secret**
 
 ```json	
     "name": <name> 
